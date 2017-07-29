@@ -1,0 +1,41 @@
+<h1>Sign Up</h1>
+<form #form="ngForm" (ngSubmit)=signup(form)>
+  <div>
+    <span>email</span>
+    <input type="text"
+          name="email"
+          required
+          #email="ngModel"
+          ngModel>
+    <div *ngIf="email.errors && (email.dirty || email.touched)">
+      <label *ngIf="email.errors.required">can't be blank</label>
+    </div>
+  </div>
+  <div>
+    <span>password</span>
+    <input type="text"
+          name="password"
+          required
+          #password="ngModel"
+          ngModel>
+    <div *ngIf="password.errors && (password.dirty || password.touched)">
+      <label *ngIf="password.errors.required">can't be blank</label>
+    </div>
+  </div>
+  <div>
+    <span>confirm password</span>
+    <input type="text"
+          name="confirmPassword"
+          #confirmPassword="ngModel"
+          required
+          ngModel>
+    <div *ngIf="confirmPassword.errors && (confirmPassword.dirty || confirmPassword.touched)">
+      <label *ngIf="confirmPassword.errors.required">can't be blank</label>
+    </div>
+  </div>
+  <button type="submit">signin</button>
+  <a href="javascript:void(0);" routerLink="/sign-in">have an account</a>
+</form>
+
+{{form.errors | json }}
+{{form.valid | json }}
