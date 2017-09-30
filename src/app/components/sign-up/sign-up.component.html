@@ -1,5 +1,5 @@
 <h1>Sign Up</h1>
-<form #form="ngForm" (ngSubmit)=signup(form)>
+<form #form="ngForm" (ngSubmit)=signUp(form)>
   <div>
     <span>email</span>
     <input type="text"
@@ -33,9 +33,6 @@
       <label *ngIf="confirmPassword.errors.required">can't be blank</label>
     </div>
   </div>
-  <button type="submit">signin</button>
+  <button type="submit">signup</button>
   <a href="javascript:void(0);" routerLink="/sign-in">have an account</a>
 </form>
-
-{{form.errors | json }}
-{{form.valid | json }}
