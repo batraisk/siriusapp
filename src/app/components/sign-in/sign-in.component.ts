@@ -8,7 +8,7 @@ import { User } from '../../models/user';
 @Component({
   selector: 'app-sign-in',
   templateUrl: './sign-in.component.html',
-  styleUrls: ['./sign-in.component.sass']
+  styleUrls: ['./sign-in.component.scss']
 })
 export class SignInComponent implements OnInit {
   public currentUser: User;
@@ -16,13 +16,13 @@ export class SignInComponent implements OnInit {
   constructor(private _authService: AuthService) { }
 
   ngOnInit() {
-    this._authService.getUser().subscribe(
-      user => {
-        if (!user) { return null; }
-        this.currentUser = user;
-      },
-      error => console.log(error)
-    );
+    // this._authService.getUser().subscribe(
+    //   user => {
+    //     if (!user) { return null; }
+    //     this.currentUser = user;
+    //   },
+    //   error => console.log(error)
+    // );
   }
   public signin(form: NgForm): void {
     this._authService.signIn(form.value as User).subscribe(
