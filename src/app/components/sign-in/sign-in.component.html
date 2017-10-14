@@ -1,3 +1,4 @@
+{{currentUser?.email }}
 <h1>Sign in</h1>
 <form #form="ngForm" (ngSubmit)=signin(form)>
   <div>
@@ -25,3 +26,4 @@
   <button type="submit" [disabled]="form.invalid">signin</button>
   <a href="javascript:void(0);" routerLink="/sign-up">new user</a>
 </form>
+<button (click)="isAutarizate(email.value, password.value)">isAutarizate</button>
