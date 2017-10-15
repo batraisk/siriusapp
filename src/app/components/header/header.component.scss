@@ -15,11 +15,17 @@ header {
   }
 
   .user-menu {
+    height: 50px;
     display: flex;
     margin-right: 60px;
     align-items: center;
     font-size: 14px;
+    padding: 0 10px;
 
+    &:hover {
+      background: #d6c87e;
+      cursor: pointer;
+    }
     .avatar{
       height: 30px;
     }

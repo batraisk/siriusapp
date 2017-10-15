@@ -1,14 +1,24 @@
 <header>
+<img class="logo"
+     src="../../assets/images/companylogo.png">
 
-    <img class="logo"
-         src="../../assets/images/companylogo.png">
 
-<div class="user-menu">
-  <img class="avatar"
-       src="../../assets/images/icons/avatar_default.svg">
-  <div class="user-email">
-    {{ _authService?.currentUser?.email }}
+
+<div class="btn-group" dropdown>
+    <div dropdownToggle class="user-menu">
+      <img class="avatar"
+            src="../../assets/images/icons/avatar_default.svg">
+      <div class="user-email">
+        {{ _authService?.currentUser?.email }}
+      </div>
+    </div>
+    <ul *dropdownMenu class="dropdown-menu" role="menu">
+      <li role="menuitem"><a class="dropdown-item" href="#">Action</a></li>
+      <li role="menuitem"><a class="dropdown-item" href="#">Another action</a></li>
+      <li role="menuitem"><a class="dropdown-item" href="#">Something else here</a></li>
+      <li class="divider dropdown-divider"></li>
+      <li role="menuitem"><a class="dropdown-item" href="#">Exit</a>
+      </li>
+    </ul>
   </div>
-
-</div>
 </header>
